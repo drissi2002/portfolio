@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Houcemeddine DRISSI — Full-Stack Java Engineer</title>
+  <meta name="description" content="OCP Java SE 17 Certified Full-Stack Engineer specializing in Spring Boot, Angular, React & Microservices." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[#050A18] text-[#F8FAFC] overflow-x-hidden">
+
+  <!-- ══════════════════ NAVIGATION ══════════════════ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="logo-text font-mono text-lg font-semibold tracking-wider">
+        <span class="text-indigo-400">&lt;</span>HD<span class="text-indigo-400">/&gt;</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="nav-link text-sm font-medium text-slate-400 hover:text-white transition-colors">About</a>
+        <a href="#skills" class="nav-link text-sm font-medium text-slate-400 hover:text-white transition-colors">Skills</a>
+        <a href="#experience" class="nav-link text-sm font-medium text-slate-400 hover:text-white transition-colors">Experience</a>
+        <a href="#projects" class="nav-link text-sm font-medium text-slate-400 hover:text-white transition-colors">Projects</a>
+        <a href="#contact" class="nav-link text-sm font-medium text-slate-400 hover:text-white transition-colors">Contact</a>
+        <a href="CV_Houcemeddine_DRISSI_EN.pdf" download class="px-4 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/30">
+          <i class="fa fa-download mr-2"></i>Resume
+        </a>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-slate-400 hover:text-white">
+        <i class="fa fa-bars text-xl"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 glass-nav">
+      <div class="flex flex-col gap-4 pt-4">
+        <a href="#about" class="text-slate-300 hover:text-white transition-colors mobile-menu-link">About</a>
+        <a href="#skills" class="text-slate-300 hover:text-white transition-colors mobile-menu-link">Skills</a>
+        <a href="#experience" class="text-slate-300 hover:text-white transition-colors mobile-menu-link">Experience</a>
+        <a href="#projects" class="text-slate-300 hover:text-white transition-colors mobile-menu-link">Projects</a>
+        <a href="#contact" class="text-slate-300 hover:text-white transition-colors mobile-menu-link">Contact</a>
+        <a href="CV_Houcemeddine_DRISSI_EN.pdf" download class="text-indigo-400 hover:text-indigo-300 transition-colors">Download CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+
+    <!-- Animated background orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Grid overlay -->
+    <div class="grid-bg absolute inset-0 opacity-20"></div>
+
+    <!-- Particles canvas -->
+    <canvas id="particles-canvas" class="absolute inset-0 pointer-events-none"></canvas>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 text-sm font-mono text-indigo-300 border border-indigo-500/20" data-aos="fade-down" data-aos-delay="100">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Available for opportunities in France / Europe
+      </div>
+
+      <!-- Name -->
+      <h1 class="hero-name font-display font-bold mb-4" data-aos="fade-up" data-aos-delay="200">
+        Houcemeddine<br />
+        <span class="gradient-text">DRISSI</span>
+      </h1>
+
+      <!-- Typed role -->
+      <div class="flex items-center justify-center gap-3 mb-6" data-aos="fade-up" data-aos-delay="300">
+        <span class="text-slate-400 text-lg md:text-xl font-medium">I build</span>
+        <span id="typed-role" class="text-lg md:text-xl font-semibold text-white font-mono"></span>
+      </div>
+
+      <!-- Tagline -->
+      <p class="max-w-2xl mx-auto text-slate-400 text-base md:text-lg leading-relaxed mb-10" data-aos="fade-up" data-aos-delay="400">
+        OCP Java SE 17 Certified Full-Stack Engineer with <strong class="text-white">3+ years</strong> building enterprise platforms in
+        <strong class="text-indigo-400">banking</strong>, <strong class="text-cyan-400">fintech</strong> & <strong class="text-violet-400">microservices</strong>.
+        Formerly at Wevioo — building systems that process <strong class="text-white">30,000+ operations/month</strong>.
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-16" data-aos="fade-up" data-aos-delay="500">
+        <a href="#experience" class="btn-primary px-8 py-3 rounded-full font-semibold text-white">
+          View My Work <i class="fa fa-arrow-right ml-2"></i>
+        </a>
+        <a href="#contact" class="btn-ghost px-8 py-3 rounded-full font-semibold text-slate-300 border border-slate-600 hover:border-indigo-500 hover:text-white transition-all duration-300">
+          Let's Connect
+        </a>
+      </div>
+
+      <!-- Social links -->
+      <div class="flex items-center justify-center gap-6" data-aos="fade-up" data-aos-delay="600">
+        <a href="https://linkedin.com/in/drissi-houcem-eddine" target="_blank" class="social-icon text-slate-500 hover:text-indigo-400 transition-all duration-300 hover:-translate-y-1">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="https://github.com/drissi2002" target="_blank" class="social-icon text-slate-500 hover:text-slate-200 transition-all duration-300 hover:-translate-y-1">
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a href="mailto:houssemmedine.drissi@enicar.ucar.tn" class="social-icon text-slate-500 hover:text-cyan-400 transition-all duration-300 hover:-translate-y-1">
+          <i class="fa fa-envelope text-2xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <span class="text-slate-600 text-xs tracking-widest uppercase font-mono">Scroll</span>
+      <i class="fa fa-chevron-down text-slate-600 text-sm"></i>
+    </div>
+  </section>
+
+  <!-- ══════════════════ STATS BAR ══════════════════ -->
+  <section class="relative z-10 py-12 border-y border-white/5">
+    <div class="stats-bar-bg absolute inset-0"></div>
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-number text-4xl font-bold font-display gradient-text" data-target="3">0</div>
+          <div class="text-slate-400 text-sm mt-1 font-mono">+ Years Experience</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-number text-4xl font-bold font-display gradient-text" data-target="5">0</div>
+          <div class="text-slate-400 text-sm mt-1 font-mono">Enterprise Projects</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-number text-4xl font-bold font-display gradient-text-cyan" data-target="30">0</div>
+          <div class="text-slate-400 text-sm mt-1 font-mono">k+ Monthly Ops Supported</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+          <div class="stat-number text-4xl font-bold font-display gradient-text-violet" data-target="5000">0</div>
+          <div class="text-slate-400 text-sm mt-1 font-mono">+ Annual Digital Workflows</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ ABOUT ══════════════════ -->
+  <section id="about" class="py-24 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label mb-4" data-aos="fade-right">
+        <span class="font-mono text-indigo-400 text-sm tracking-widest">// 01. ABOUT ME</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <!-- Text -->
+        <div data-aos="fade-right" data-aos-delay="100">
+          <h2 class="text-3xl md:text-4xl font-bold font-display mb-6 leading-tight">
+            Engineering systems that<br/>
+            <span class="gradient-text">scale beyond limits.</span>
+          </h2>
+          <p class="text-slate-400 leading-relaxed mb-5">
+            I'm a Full-Stack Java Engineer based in Ariana, Tunisia, with a track record of shipping mission-critical platforms
+            for Tunisia's Central Bank and international fintech companies. I architect backend systems with Spring Boot
+            and build intuitive frontends with Angular and React — bridging complex business logic with seamless user experiences.
+          </p>
+          <p class="text-slate-400 leading-relaxed mb-5">
+            Holding an <span class="text-white font-medium">Oracle Certified Professional Java SE 17</span> credential
+            and a National Diploma in Computer Engineering from <span class="text-white font-medium">ENICarthage</span>,
+            I combine academic rigor with battle-tested production experience across banking, BPM workflows, e-signatures, and foreign exchange.
+          </p>
+          <p class="text-slate-400 leading-relaxed mb-8">
+            Currently open to <span class="text-indigo-400 font-medium">permanent roles in France or Europe</span> — visa sponsorship welcome.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="tech-badge">Java</span>
+            <span class="tech-badge">Spring Boot</span>
+            <span class="tech-badge">Angular</span>
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Microservices</span>
+            <span class="tech-badge">Docker</span>
+          </div>
+        </div>
+
+        <!-- Photo column -->
+        <div class="relative flex items-center justify-center" data-aos="fade-left" data-aos-delay="200">
+          <div class="about-photo-container">
+            <!-- Decorative background blobs -->
+            <div class="about-photo-blob about-photo-blob-1"></div>
+            <div class="about-photo-blob about-photo-blob-2"></div>
+
+            <!-- Spinning border ring -->
+            <div class="about-photo-ring"></div>
+
+            <!-- Photo frame -->
+            <div class="about-photo-frame">
+              <img src="profile.jpg" alt="Houcemeddine DRISSI" class="about-photo-img" />
+              <!-- Bottom info overlay -->
+              <div class="about-photo-overlay">
+                <div class="about-photo-overlay-inner">
+                  <div class="font-semibold text-white text-sm leading-tight">Houcemeddine DRISSI</div>
+                  <div class="text-indigo-300 text-xs font-mono mt-0.5">Full-Stack Java Engineer</div>
+                  <div class="flex items-center gap-1.5 mt-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-emerald-400 text-xs font-mono">Open to offers · France / EU</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating badge: OCP -->
+            <div class="about-badge about-badge-top-right">
+              <i class="fa fa-certificate text-amber-400 text-sm"></i>
+              <span class="text-amber-300 text-xs font-mono font-semibold">OCP Java SE 17</span>
+            </div>
+
+            <!-- Floating badge: Experience -->
+            <div class="about-badge about-badge-bottom-left" style="bottom: 110px;">
+              <i class="fa fa-code text-indigo-400 text-sm"></i>
+              <span class="text-indigo-300 text-xs font-mono font-semibold">3+ Years</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ SKILLS BENTO ══════════════════ -->
+  <section id="skills" class="py-24 relative">
+    <div class="orb orb-4"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label mb-4" data-aos="fade-right">
+        <span class="font-mono text-cyan-400 text-sm tracking-widest">// 02. SKILLS & STACK</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold font-display mb-12" data-aos="fade-up">
+        Tools I master
+      </h2>
+
+      <!-- Bento Grid -->
+      <div class="bento-grid">
+
+        <!-- Backend - large card -->
+        <div class="bento-card bento-large glass-card rounded-2xl p-8 border border-white/10" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
+              <i class="fa fa-server text-indigo-400"></i>
+            </div>
+            <h3 class="font-semibold font-display text-lg">Backend Engineering</h3>
+          </div>
+          <div class="space-y-4">
+            <div class="skill-row">
+              <div class="flex justify-between mb-1.5">
+                <span class="text-sm text-slate-300 font-mono">Java 8/11/17</span>
+                <span class="text-sm text-indigo-400 font-mono">95%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95" style="--bar-color: #6366F1;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="flex justify-between mb-1.5">
+                <span class="text-sm text-slate-300 font-mono">Spring Boot / Cloud</span>
+                <span class="text-sm text-indigo-400 font-mono">92%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92" style="--bar-color: #6366F1;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="flex justify-between mb-1.5">
+                <span class="text-sm text-slate-300 font-mono">REST / SOAP / GraphQL</span>
+                <span class="text-sm text-indigo-400 font-mono">88%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88" style="--bar-color: #6366F1;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="flex justify-between mb-1.5">
+                <span class="text-sm text-slate-300 font-mono">Microservices / OAuth2 / JWT</span>
+                <span class="text-sm text-indigo-400 font-mono">85%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85" style="--bar-color: #6366F1;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frontend card -->
+        <div class="bento-card bento-medium glass-card rounded-2xl p-8 border border-white/10" data-aos="fade-up" data-aos-delay="150">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+              <i class="fa fa-code text-cyan-400"></i>
+            </div>
+            <h3 class="font-semibold font-display text-lg">Frontend</h3>
+          </div>
+          <div class="space-y-4">
+            <div class="skill-row">
+              <div class="flex justify-between mb-1.5">
+                <span class="text-sm text-slate-300 font-mono">Angular</span>
+                <span class="text-sm text-cyan-400 font-mono">90%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90" style="--bar-color: #06B6D4;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="flex justify-between mb-1.5">
+                <span class="text-sm text-slate-300 font-mono">React / Next.js</span>
+                <span class="text-sm text-cyan-400 font-mono">85%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85" style="--bar-color: #06B6D4;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="flex justify-between mb-1.5">
+                <span class="text-sm text-slate-300 font-mono">TypeScript</span>
+                <span class="text-sm text-cyan-400 font-mono">88%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88" style="--bar-color: #06B6D4;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DevOps card -->
+        <div class="bento-card bento-small glass-card rounded-2xl p-8 border border-white/10" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center">
+              <i class="fab fa-docker text-violet-400"></i>
+            </div>
+            <h3 class="font-semibold font-display text-lg">DevOps</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bento-chip bento-chip-violet">Docker</span>
+            <span class="bento-chip bento-chip-violet">Jenkins</span>
+            <span class="bento-chip bento-chip-violet">GitLab CI/CD</span>
+            <span class="bento-chip bento-chip-violet">SonarQube</span>
+            <span class="bento-chip bento-chip-violet">Git</span>
+            <span class="bento-chip bento-chip-violet">Swagger</span>
+          </div>
+        </div>
+
+        <!-- Databases card -->
+        <div class="bento-card bento-small glass-card rounded-2xl p-8 border border-white/10" data-aos="fade-up" data-aos-delay="250">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+              <i class="fa fa-database text-emerald-400"></i>
+            </div>
+            <h3 class="font-semibold font-display text-lg">Databases</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bento-chip bento-chip-emerald">PostgreSQL</span>
+            <span class="bento-chip bento-chip-emerald">SQL Server</span>
+            <span class="bento-chip bento-chip-emerald">MySQL</span>
+            <span class="bento-chip bento-chip-emerald">Oracle SQL</span>
+          </div>
+        </div>
+
+        <!-- Security card -->
+        <div class="bento-card bento-wide glass-card rounded-2xl p-8 border border-white/10" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
+              <i class="fa fa-shield-halved text-amber-400"></i>
+            </div>
+            <h3 class="font-semibold font-display text-lg">Security & Auth</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bento-chip bento-chip-amber">OAuth2</span>
+            <span class="bento-chip bento-chip-amber">JWT</span>
+            <span class="bento-chip bento-chip-amber">Keycloak</span>
+            <span class="bento-chip bento-chip-amber">LDAP</span>
+            <span class="bento-chip bento-chip-amber">SMS OTP</span>
+          </div>
+        </div>
+
+        <!-- Domain expertise card -->
+        <div class="bento-card bento-wide glass-card rounded-2xl p-8 border border-white/10" data-aos="fade-up" data-aos-delay="350">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center">
+              <i class="fa fa-landmark text-rose-400"></i>
+            </div>
+            <h3 class="font-semibold font-display text-lg">Business Domains</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bento-chip bento-chip-rose">Banking</span>
+            <span class="bento-chip bento-chip-rose">Fintech</span>
+            <span class="bento-chip bento-chip-rose">Credit Scoring</span>
+            <span class="bento-chip bento-chip-rose">Leasing/Factoring</span>
+            <span class="bento-chip bento-chip-rose">Forex</span>
+            <span class="bento-chip bento-chip-rose">BPM (Camunda)</span>
+            <span class="bento-chip bento-chip-rose">e-Signature</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ EXPERIENCE ══════════════════ -->
+  <section id="experience" class="py-24 relative">
+    <div class="orb orb-5"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label mb-4" data-aos="fade-right">
+        <span class="font-mono text-violet-400 text-sm tracking-widest">// 03. EXPERIENCE</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold font-display mb-12" data-aos="fade-up">
+        Where I've built things
+      </h2>
+
+      <!-- Timeline -->
+      <div class="timeline-container relative">
+        <!-- Vertical line -->
+        <div class="timeline-line absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/60 via-cyan-500/60 to-violet-500/0"></div>
+
+        <!-- Job 1 -->
+        <div class="timeline-item relative grid md:grid-cols-2 gap-8 mb-16 md:mb-20" data-aos="fade-up">
+          <div class="hidden md:flex md:justify-end md:pr-12">
+            <div class="text-right">
+              <div class="font-mono text-indigo-400 text-sm mb-1">Aug 2025 — Present</div>
+              <div class="text-slate-500 text-sm">Ariana, Tunisia</div>
+            </div>
+          </div>
+          <!-- Dot -->
+          <div class="timeline-dot absolute left-3.5 md:left-1/2 md:-translate-x-1/2 top-2 w-5 h-5 rounded-full bg-indigo-500 border-4 border-[#050A18] shadow-lg shadow-indigo-500/50 z-10"></div>
+          <div class="pl-16 md:pl-12">
+            <div class="glass-card rounded-2xl p-6 border border-white/10 exp-card">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="font-semibold font-display text-lg text-white">Full-Stack Java Engineer</h3>
+                  <div class="text-indigo-400 font-mono text-sm">Wevioo</div>
+                  <div class="md:hidden font-mono text-slate-500 text-xs mt-1">Aug 2025 — Present</div>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">Current</span>
+              </div>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Designing and implementing credit analysis and internal scoring modules for Leasing and Factoring financing workflows. 
+                Engineering client score calculation logic including PD computation, internal ratings, credit decisions, and automated financial controls.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-pill">Java</span><span class="tech-pill">Spring Boot</span><span class="tech-pill">SQL Server</span><span class="tech-pill">Angular</span><span class="tech-pill">LDAP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item relative grid md:grid-cols-2 gap-8 mb-16 md:mb-20" data-aos="fade-up">
+          <div class="hidden md:flex md:justify-end md:pr-12">
+            <div class="text-right">
+              <div class="font-mono text-cyan-400 text-sm mb-1">Mar 2025 — Jul 2025</div>
+              <div class="text-slate-500 text-sm">International · LegalPlace</div>
+            </div>
+          </div>
+          <div class="timeline-dot absolute left-3.5 md:left-1/2 md:-translate-x-1/2 top-2 w-5 h-5 rounded-full bg-cyan-500 border-4 border-[#050A18] shadow-lg shadow-cyan-500/50 z-10"></div>
+          <div class="pl-16 md:pl-12">
+            <div class="glass-card rounded-2xl p-6 border border-white/10 exp-card">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="font-semibold font-display text-lg text-white">Full-Stack Java Engineer</h3>
+                  <div class="text-cyan-400 font-mono text-sm">Wevioo · LegalPlace</div>
+                  <div class="md:hidden font-mono text-slate-500 text-xs mt-1">Mar 2025 — Jul 2025</div>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono">Fintech</span>
+              </div>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Contributed to an international platform for company creation and legal business services. Built secure virtual and physical bank card management through Swan.io integration, with robust role-based access control across user, account, and permission modules.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-pill">Spring Boot</span><span class="tech-pill">OAuth2</span><span class="tech-pill">GraphQL</span><span class="tech-pill">Angular</span><span class="tech-pill">Docker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item relative grid md:grid-cols-2 gap-8 mb-16 md:mb-20" data-aos="fade-up">
+          <div class="hidden md:flex md:justify-end md:pr-12">
+            <div class="text-right">
+              <div class="font-mono text-violet-400 text-sm mb-1">Mar 2024 — Feb 2025</div>
+              <div class="text-slate-500 text-sm">Central Bank of Tunisia</div>
+            </div>
+          </div>
+          <div class="timeline-dot absolute left-3.5 md:left-1/2 md:-translate-x-1/2 top-2 w-5 h-5 rounded-full bg-violet-500 border-4 border-[#050A18] shadow-lg shadow-violet-500/50 z-10"></div>
+          <div class="pl-16 md:pl-12">
+            <div class="glass-card rounded-2xl p-6 border border-white/10 exp-card">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="font-semibold font-display text-lg text-white">Software Engineer</h3>
+                  <div class="text-violet-400 font-mono text-sm">Wevioo · Central Bank of Tunisia</div>
+                  <div class="md:hidden font-mono text-slate-500 text-xs mt-1">Mar 2024 — Feb 2025</div>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-400 text-xs font-mono">Banking</span>
+              </div>
+              <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                Architected digital investment-form workflows for <strong class="text-white">Fiche-Invest</strong>, targeting <strong class="text-white">5,000+ annual submissions</strong> across 
+                Tunisian banks. Integrated TUNTRUST e-signature with automated PDF generation and validation — reducing manual processing overhead significantly.
+              </p>
+              <div class="achievement-highlight rounded-xl p-3 mb-4">
+                <i class="fa fa-trophy text-amber-400 mr-2 text-sm"></i>
+                <span class="text-amber-300 text-sm">5,000+ digital forms processed annually</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-pill">Spring Boot</span><span class="tech-pill">React</span><span class="tech-pill">SOAP</span><span class="tech-pill">OAuth2</span><span class="tech-pill">TypeScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="timeline-item relative grid md:grid-cols-2 gap-8 mb-16 md:mb-20" data-aos="fade-up">
+          <div class="hidden md:flex md:justify-end md:pr-12">
+            <div class="text-right">
+              <div class="font-mono text-amber-400 text-sm mb-1">Aug 2023 — Mar 2024</div>
+              <div class="text-slate-500 text-sm">Central Bank of Tunisia</div>
+            </div>
+          </div>
+          <div class="timeline-dot absolute left-3.5 md:left-1/2 md:-translate-x-1/2 top-2 w-5 h-5 rounded-full bg-amber-500 border-4 border-[#050A18] shadow-lg shadow-amber-500/50 z-10"></div>
+          <div class="pl-16 md:pl-12">
+            <div class="glass-card rounded-2xl p-6 border border-white/10 exp-card">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="font-semibold font-display text-lg text-white">Full-Stack Java Engineer</h3>
+                  <div class="text-amber-400 font-mono text-sm">Wevioo · EXOP Platform</div>
+                  <div class="md:hidden font-mono text-slate-500 text-xs mt-1">Aug 2023 — Mar 2024</div>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono">Forex</span>
+              </div>
+              <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                Maintained and extended EXOP, a production-grade foreign exchange system handling <strong class="text-white">~30,000 monthly operations</strong>. 
+                Enhanced back-office modules and public APIs, added SMS OTP authentication — improving platform reliability and security at scale.
+              </p>
+              <div class="achievement-highlight rounded-xl p-3 mb-4">
+                <i class="fa fa-bolt text-amber-400 mr-2 text-sm"></i>
+                <span class="text-amber-300 text-sm">30,000+ exchange operations supported monthly</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-pill">Spring Boot</span><span class="tech-pill">Angular</span><span class="tech-pill">React</span><span class="tech-pill">Next.js</span><span class="tech-pill">OAuth2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="timeline-item relative grid md:grid-cols-2 gap-8 mb-16 md:mb-20" data-aos="fade-up">
+          <div class="hidden md:flex md:justify-end md:pr-12">
+            <div class="text-right">
+              <div class="font-mono text-emerald-400 text-sm mb-1">Dec 2022 — Jul 2023</div>
+              <div class="text-slate-500 text-sm">Ariana, Tunisia</div>
+            </div>
+          </div>
+          <div class="timeline-dot absolute left-3.5 md:left-1/2 md:-translate-x-1/2 top-2 w-5 h-5 rounded-full bg-emerald-500 border-4 border-[#050A18] shadow-lg shadow-emerald-500/50 z-10"></div>
+          <div class="pl-16 md:pl-12">
+            <div class="glass-card rounded-2xl p-6 border border-white/10 exp-card">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="font-semibold font-display text-lg text-white">Full-Stack Java Developer</h3>
+                  <div class="text-emerald-400 font-mono text-sm">Wevioo · BPM Platform</div>
+                  <div class="md:hidden font-mono text-slate-500 text-xs mt-1">Dec 2022 — Jul 2023</div>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">Microservices</span>
+              </div>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Built a microservices-based internal platform to automate and visualize business processes using Camunda BPM.
+                Customized APIs with JWT auth, Keycloak RBAC, and implemented full CI/CD pipelines using Jenkins and Docker from the ground up.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-pill">Spring Boot</span><span class="tech-pill">Spring Cloud</span><span class="tech-pill">Camunda</span><span class="tech-pill">Keycloak</span><span class="tech-pill">Docker</span><span class="tech-pill">Jenkins</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ PROJECTS ══════════════════ -->
+  <section id="projects" class="py-24 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label mb-4" data-aos="fade-right">
+        <span class="font-mono text-emerald-400 text-sm tracking-widest">// 04. FEATURED PROJECTS</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold font-display mb-12" data-aos="fade-up">
+        Systems I've shipped
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Project 1 -->
+        <div class="project-card glass-card rounded-2xl p-6 border border-white/10 group" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-icon w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i class="fa fa-chart-line text-white text-lg"></i>
+          </div>
+          <h3 class="font-semibold font-display text-lg mb-2">Credit Scoring Engine</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+            Leasing & Factoring credit analysis system with PD calculation, internal ratings, and automated financial controls for enterprise financing workflows.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="project-tag">Java</span><span class="project-tag">Spring Boot</span><span class="project-tag">SQL Server</span><span class="project-tag">Angular</span>
+          </div>
+          <div class="flex items-center gap-2 text-indigo-400 text-sm font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Active · Enterprise Platform
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass-card rounded-2xl p-6 border border-white/10 group" data-aos="fade-up" data-aos-delay="150">
+          <div class="project-icon w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i class="fa fa-credit-card text-white text-lg"></i>
+          </div>
+          <h3 class="font-semibold font-display text-lg mb-2">LegalPlace Banking Module</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+            International fintech platform for company creation with full virtual/physical bank card management via Swan.io integration and secure OAuth2 flows.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="project-tag">Spring Boot</span><span class="project-tag">GraphQL</span><span class="project-tag">OAuth2</span><span class="project-tag">Docker</span>
+          </div>
+          <div class="flex items-center gap-2 text-cyan-400 text-sm font-medium">
+            <i class="fa fa-globe mr-1"></i> International · Fintech
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass-card rounded-2xl p-6 border border-white/10 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-icon w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i class="fa fa-file-signature text-white text-lg"></i>
+          </div>
+          <h3 class="font-semibold font-display text-lg mb-2">Fiche-Invest Digital Platform</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+            Digital investment-form system for the Central Bank of Tunisia — 5,000+ annual submissions, TUNTRUST e-signature, automated PDF generation.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="project-tag">Spring Boot</span><span class="project-tag">React</span><span class="project-tag">SOAP</span><span class="project-tag">e-Signature</span>
+          </div>
+          <div class="flex items-center gap-2 text-violet-400 text-sm font-medium">
+            <i class="fa fa-landmark mr-1"></i> Central Bank · 5K+ annual forms
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card glass-card rounded-2xl p-6 border border-white/10 group" data-aos="fade-up" data-aos-delay="250">
+          <div class="project-icon w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i class="fa fa-money-bill-transfer text-white text-lg"></i>
+          </div>
+          <h3 class="font-semibold font-display text-lg mb-2">EXOP Forex Platform</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+            Production-grade foreign exchange request system supporting 30,000+ monthly operations with SMS OTP auth, back-office modules, and public APIs.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="project-tag">Spring Boot</span><span class="project-tag">Angular</span><span class="project-tag">Next.js</span><span class="project-tag">WebLogic</span>
+          </div>
+          <div class="flex items-center gap-2 text-amber-400 text-sm font-medium">
+            <i class="fa fa-bolt mr-1"></i> 30K+ ops/month · Production
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card glass-card rounded-2xl p-6 border border-white/10 group" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-icon w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i class="fa fa-diagram-project text-white text-lg"></i>
+          </div>
+          <h3 class="font-semibold font-display text-lg mb-2">BPM Process Automation</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+            Microservices-based internal BPM tool with Camunda, Keycloak RBAC, JWT auth, full CI/CD pipelines via Jenkins and Docker — built from scratch.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="project-tag">Spring Cloud</span><span class="project-tag">Camunda</span><span class="project-tag">Keycloak</span><span class="project-tag">Jenkins</span>
+          </div>
+          <div class="flex items-center gap-2 text-emerald-400 text-sm font-medium">
+            <i class="fa fa-cogs mr-1"></i> Microservices · Internal Tool
+          </div>
+        </div>
+
+        <!-- CTA Card -->
+        <div class="glass-card rounded-2xl p-6 border border-indigo-500/20 bg-indigo-500/5 flex flex-col items-center justify-center text-center gap-4" data-aos="fade-up" data-aos-delay="350">
+          <div class="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center">
+            <i class="fab fa-github text-indigo-400 text-xl"></i>
+          </div>
+          <h3 class="font-semibold font-display text-lg">See More on GitHub</h3>
+          <p class="text-slate-400 text-sm">Explore my public repositories and open-source contributions.</p>
+          <a href="https://github.com/drissi2002" target="_blank" class="btn-primary px-6 py-2 rounded-full text-sm font-medium">
+            View GitHub <i class="fa fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ EDUCATION & CERT ══════════════════ -->
+  <section id="education" class="py-24 relative">
+    <div class="orb orb-6"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label mb-4" data-aos="fade-right">
+        <span class="font-mono text-amber-400 text-sm tracking-widest">// 05. EDUCATION & CERTIFICATION</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold font-display mb-12" data-aos="fade-up">
+        Academic foundation
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- OCP Cert - featured -->
+        <div class="md:col-span-2 lg:col-span-1 cert-card glass-card rounded-2xl p-8 border border-amber-500/20 bg-amber-500/5 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <div class="cert-glow absolute -top-10 -right-10 w-32 h-32 bg-amber-500/20 rounded-full blur-2xl"></div>
+          <div class="relative">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center mb-6 shadow-lg shadow-amber-500/30">
+              <i class="fa fa-certificate text-white text-2xl"></i>
+            </div>
+            <div class="font-mono text-amber-400 text-xs tracking-widest mb-2">CERTIFICATION · ORACLE</div>
+            <h3 class="font-bold font-display text-xl mb-3 text-white">OCP Java SE 17 Developer</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Oracle Certified Professional — the industry's most recognized Java credential, validating expert-level mastery of Java SE 17 platform features and design principles.
+            </p>
+            <div class="mt-6 flex items-center justify-between flex-wrap gap-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                <span class="text-amber-400 text-sm font-mono font-medium">Verified Oracle Credential</span>
+              </div>
+              <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=4DFC3F1ACB91B05823E1D16C7B755A921C6BA7E54172FF4AC09B9497F90C486A" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono font-semibold bg-amber-500/15 border border-amber-500/40 text-amber-300 hover:bg-amber-500/25 hover:border-amber-400/60 hover:text-amber-200 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber-500/20">
+                <i class="fa fa-external-link text-xs"></i> Verify Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ENICarthage -->
+        <div class="glass-card rounded-2xl p-8 border border-white/10" data-aos="fade-up" data-aos-delay="150">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-5">
+            <i class="fa fa-graduation-cap text-indigo-400 text-xl"></i>
+          </div>
+          <div class="font-mono text-indigo-400 text-xs tracking-widest mb-2">2020 — 2023</div>
+          <h3 class="font-semibold font-display text-lg mb-1 text-white">Computer Engineering</h3>
+          <div class="text-slate-400 text-sm mb-3">National School of Engineers of Carthage (ENICarthage)</div>
+          <div class="edu-highlight rounded-xl p-3 mb-4">
+            <i class="fa fa-star text-amber-400 mr-2 text-sm"></i>
+            <span class="text-amber-300 text-sm font-semibold">Avg. 15.04 / 20</span>
+          </div>
+          <p class="text-slate-500 text-xs">National Engineering Diploma · Ariana, Tunisia</p>
+        </div>
+
+        <!-- Preparatory -->
+        <div class="glass-card rounded-2xl p-8 border border-white/10" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-12 h-12 rounded-xl bg-violet-500/20 flex items-center justify-center mb-5">
+            <i class="fa fa-flask text-violet-400 text-xl"></i>
+          </div>
+          <div class="font-mono text-violet-400 text-xs tracking-widest mb-2">2018 — 2020</div>
+          <h3 class="font-semibold font-display text-lg mb-1 text-white">Preparatory Studies MPSI</h3>
+          <div class="text-slate-400 text-sm mb-3">Preparatory Institute for Engineering Studies · Nabeul</div>
+          <div class="edu-highlight rounded-xl p-3 mb-4">
+            <i class="fa fa-trophy text-violet-400 mr-2 text-sm"></i>
+            <span class="text-violet-300 text-sm font-semibold">Ranked 476 / 1,700</span>
+          </div>
+          <p class="text-slate-500 text-xs">National Engineering Entrance Exam · Top 28%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ LANGUAGES ══════════════════ -->
+  <section class="py-16 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label mb-4" data-aos="fade-right">
+        <span class="font-mono text-rose-400 text-sm tracking-widest">// 06. LANGUAGES</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Arabic / Tunisia -->
+        <div class="glass-card rounded-2xl p-6 border border-white/10 text-center lang-card">
+          <div class="lang-flag-wrapper mb-4">
+            <span style="font-size: 3.5rem; line-height: 1; display: block;">🇹🇳</span>
+          </div>
+          <h3 class="font-semibold font-display text-lg mb-1">Arabic</h3>
+          <div class="text-slate-400 text-sm mb-4">Native Speaker</div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width: 100%; background: linear-gradient(90deg, #6366F1, #8B5CF6);"></div></div>
+          <div class="text-slate-500 text-xs font-mono mt-2">C2 · Native</div>
+        </div>
+
+        <!-- French / France -->
+        <div class="glass-card rounded-2xl p-6 border border-white/10 text-center lang-card">
+          <div class="lang-flag-wrapper mb-4">
+            <span style="font-size: 3.5rem; line-height: 1; display: block;">🇫🇷</span>
+          </div>
+          <h3 class="font-semibold font-display text-lg mb-1">French</h3>
+          <div class="text-slate-400 text-sm mb-4">Professional Proficiency</div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width: 88%; background: linear-gradient(90deg, #06B6D4, #3B82F6);"></div></div>
+          <div class="text-slate-500 text-xs font-mono mt-2">B2–C1 · Professional</div>
+        </div>
+
+        <!-- English / UK -->
+        <div class="glass-card rounded-2xl p-6 border border-white/10 text-center lang-card">
+          <div class="lang-flag-wrapper mb-4">
+            <span style="font-size: 3.5rem; line-height: 1; display: block;">🇬🇧</span>
+          </div>
+          <h3 class="font-semibold font-display text-lg mb-1">English</h3>
+          <div class="text-slate-400 text-sm mb-4">Professional Proficiency</div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width: 85%; background: linear-gradient(90deg, #10B981, #06B6D4);"></div></div>
+          <div class="text-slate-500 text-xs font-mono mt-2">B2–C1 · Professional</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ CONTACT ══════════════════ -->
+  <section id="contact" class="py-24 relative">
+    <div class="orb orb-7"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label mb-4" data-aos="fade-right">
+        <span class="font-mono text-indigo-400 text-sm tracking-widest">// 07. CONTACT</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <!-- Left -->
+        <div data-aos="fade-right">
+          <h2 class="text-3xl md:text-4xl font-bold font-display mb-6">
+            Let's build something<br/>
+            <span class="gradient-text">remarkable together.</span>
+          </h2>
+          <p class="text-slate-400 leading-relaxed mb-8">
+            I'm actively looking for full-stack Java engineering roles in France or Europe. If you're building ambitious products and need a
+            proven engineer with banking and fintech depth — let's talk.
+          </p>
+          <div class="space-y-4">
+            <a href="mailto:houssemmedine.drissi@enicar.ucar.tn" class="flex items-center gap-4 glass-card rounded-xl p-4 border border-white/10 hover:border-indigo-500/40 transition-all duration-300 group">
+              <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500/30 transition-colors">
+                <i class="fa fa-envelope text-indigo-400"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-mono mb-0.5">EMAIL</div>
+                <div class="text-sm text-white">houssemmedine.drissi@enicar.ucar.tn</div>
+              </div>
+            </a>
+            <a href="tel:+21694139819" class="flex items-center gap-4 glass-card rounded-xl p-4 border border-white/10 hover:border-cyan-500/40 transition-all duration-300 group">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
+                <i class="fa fa-phone text-cyan-400"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-mono mb-0.5">PHONE</div>
+                <div class="text-sm text-white">+216 94 139 819</div>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/drissi-houcem-eddine" target="_blank" class="flex items-center gap-4 glass-card rounded-xl p-4 border border-white/10 hover:border-violet-500/40 transition-all duration-300 group">
+              <div class="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center group-hover:bg-violet-500/30 transition-colors">
+                <i class="fab fa-linkedin text-violet-400"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-mono mb-0.5">LINKEDIN</div>
+                <div class="text-sm text-white">linkedin.com/in/drissi-houcem-eddine</div>
+              </div>
+            </a>
+            <a href="https://github.com/drissi2002" target="_blank" class="flex items-center gap-4 glass-card rounded-xl p-4 border border-white/10 hover:border-slate-400/40 transition-all duration-300 group">
+              <div class="w-10 h-10 rounded-lg bg-slate-500/20 flex items-center justify-center group-hover:bg-slate-500/30 transition-colors">
+                <i class="fab fa-github text-slate-300"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-mono mb-0.5">GITHUB</div>
+                <div class="text-sm text-white">github.com/drissi2002</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Contact form -->
+        <div data-aos="fade-left" data-aos-delay="100">
+          <div class="glass-card rounded-2xl p-8 border border-white/10">
+            <h3 class="font-semibold font-display text-xl mb-6">Send a message</h3>
+            <div id="contact-form" class="space-y-4">
+              <div>
+                <label class="block text-slate-400 text-sm mb-2 font-mono">Your Name</label>
+                <input type="text" id="cf-name" placeholder="Jane Smith" class="form-input w-full rounded-xl px-4 py-3 text-sm bg-white/5 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/60 transition-colors" />
+              </div>
+              <div>
+                <label class="block text-slate-400 text-sm mb-2 font-mono">Email Address</label>
+                <input type="email" id="cf-email" placeholder="jane@company.com" class="form-input w-full rounded-xl px-4 py-3 text-sm bg-white/5 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/60 transition-colors" />
+              </div>
+              <div>
+                <label class="block text-slate-400 text-sm mb-2 font-mono">Subject</label>
+                <input type="text" id="cf-subject" placeholder="Job opportunity / Collaboration" class="form-input w-full rounded-xl px-4 py-3 text-sm bg-white/5 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/60 transition-colors" />
+              </div>
+              <div>
+                <label class="block text-slate-400 text-sm mb-2 font-mono">Message</label>
+                <textarea id="cf-message" rows="4" placeholder="Tell me about the role or project..." class="form-input w-full rounded-xl px-4 py-3 text-sm bg-white/5 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/60 transition-colors resize-none"></textarea>
+              </div>
+              <button onclick="sendEmail()" class="btn-primary w-full py-3 rounded-xl font-semibold text-white flex items-center justify-center gap-2">
+                <i class="fa fa-paper-plane"></i> Send Message
+              </button>
+              <div id="form-success" class="hidden text-center text-emerald-400 text-sm font-mono py-2">
+                <i class="fa fa-check-circle mr-2"></i>Message ready — opening your email client...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <footer class="py-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="font-mono text-slate-500 text-sm">
+        <span class="text-indigo-400">&lt;</span>HD<span class="text-indigo-400">/&gt;</span>
+        · Houcemeddine DRISSI · Full-Stack Java Engineer
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="https://linkedin.com/in/drissi-houcem-eddine" target="_blank" class="text-slate-600 hover:text-indigo-400 transition-colors">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+        <a href="https://github.com/drissi2002" target="_blank" class="text-slate-600 hover:text-white transition-colors">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="mailto:houssemmedine.drissi@enicar.ucar.tn" class="text-slate-600 hover:text-cyan-400 transition-colors">
+          <i class="fa fa-envelope text-xl"></i>
+        </a>
+      </div>
+      <div class="text-slate-600 text-xs font-mono">
+        Built with Java precision · © 2025
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
